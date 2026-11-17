@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bp6nvtx1dw1hw"]
+
+[ext_resource type="PackedScene" uid="uid://c256jtes1pnet" path="res://entities/player.tscn" id="1_d7po0"]
+[ext_resource type="Texture2D" uid="uid://dmrc017u1l1yy" path="res://icon.svg" id="2_qtlar"]
+[ext_resource type="Script" uid="uid://5vliyhowwm23" path="res://entities/player_movement.gd" id="2_rk7hg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7po0"]
+size = Vector3(100, 0.5, 100)
+
+[node name="House" type="Node3D" unique_id=114962269]
+
+[node name="Player" parent="." unique_id=1787040293 instance=ExtResource("1_d7po0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28479052, 0, 1.2173662)
+script = ExtResource("2_rk7hg")
+
+[node name="Map" type="StaticBody3D" parent="." unique_id=1359037938]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map" unique_id=1700734337]
+shape = SubResource("BoxShape3D_d7po0")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1380386267]
+transform = Transform3D(0.99980825, 0, 0.01958126, 0, 1, 0, -0.01958126, 0, 0.99980825, -0.191836, 0, -1.0818305)
+texture = ExtResource("2_qtlar")
