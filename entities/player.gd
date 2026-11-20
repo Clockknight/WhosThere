@@ -1,8 +1,8 @@
-class_name PlayerMovement extends Node3D
+class_name Player extends Node3D
 
 @export var camera : Camera3D
 
-const SPEED = 2.5
+const SPEED = 4.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

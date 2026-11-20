@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c256jtes1pnet"]
 
-[ext_resource type="Script" uid="uid://5vliyhowwm23" path="res://entities/player_movement.gd" id="1_merdl"]
+[ext_resource type="Script" uid="uid://5vliyhowwm23" path="res://entities/player.gd" id="1_merdl"]
 [ext_resource type="Script" uid="uid://hng3pk5qisb8" path="res://entities/camera.gd" id="2_b0kkn"]
+[ext_resource type="PackedScene" uid="uid://bq73rgjtrarmp" path="res://entities/UI.tscn" id="3_e4p34"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3f3p"]
 
@@ -16,3 +17,5 @@ shape = SubResource("CapsuleShape3D_u3f3p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5393359, 0)
 fov = 90.0
 script = ExtResource("2_b0kkn")
+
+[node name="UI" parent="." unique_id=878285423 instance=ExtResource("3_e4p34")]
