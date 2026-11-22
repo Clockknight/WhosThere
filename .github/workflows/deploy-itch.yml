@@ -2,7 +2,8 @@ name: Deploy to itch.io
 
 on:
   push:
-    branches: [main]
+    branches: [master]
+  
 
 env:
   GODOT_VERSION: 4.7
