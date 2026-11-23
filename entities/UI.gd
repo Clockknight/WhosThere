@@ -3,6 +3,7 @@ class_name UI extends CanvasLayer
 @export var player : Player
 
 @onready var popup = $Popup
+@onready var confirm = $Confirm
 const RAY_LENGTH = 1000
 
 func _physics_process(delta):
@@ -17,5 +18,22 @@ func _physics_process(delta):
 	query.exclude = [player]
 	
 	var result = space_state.intersect_ray(query)
-	popup.visible = (result != {} and result.collider is Interactable)
+	if confirm.visible:
+		if result == {}:
+			confirm.visible = false
+	else:
+		if result != {}:
+			if result.collider is Interactable:
+				popup.visible = true
+				result.collider.visual.modulate = Color.YELLOW
+			else:
+				popup.visible = false
+				get_tree().call_group(&"Interactable", "refresh_visual")
+	
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action("interact") and popup.visible:
+		confirm.visible = true
+		popup.visible = false
+		
 	

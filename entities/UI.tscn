@@ -1,16 +1,48 @@
 [gd_scene format=3 uid="uid://bq73rgjtrarmp"]
 
 [ext_resource type="Script" uid="uid://d10f072ft05h3" path="res://entities/UI.gd" id="1_cyjxy"]
-[ext_resource type="Texture2D" uid="uid://dmrc017u1l1yy" path="res://icon.svg" id="2_81sxg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxlej"]
+font_size = 128
 
 [node name="UI" type="CanvasLayer" unique_id=878285423]
 offset = Vector2(960, 540)
 transform = Transform2D(1, 0, 0, 1, 960, 540)
 script = ExtResource("1_cyjxy")
 
-[node name="Popup" type="Sprite2D" parent="." unique_id=2081665770]
+[node name="Confirm" type="Label" parent="." unique_id=821572829]
 visible = false
-scale = Vector2(9, 5.0624995)
-texture = ExtResource("2_81sxg")
+modulate = Color(0.3647059, 1, 0.1764706, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1919.0
+offset_top = -1081.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You pressed it!"
+label_settings = SubResource("LabelSettings_sxlej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Popup" type="Label" parent="." unique_id=928742551]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1902.0
+offset_top = -1092.0
+offset_right = -4.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"E\" to interact!"
+label_settings = SubResource("LabelSettings_sxlej")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1447574703]

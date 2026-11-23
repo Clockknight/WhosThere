@@ -21,13 +21,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.195, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map" unique_id=1700734337]
 shape = SubResource("BoxShape3D_d7po0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=709942739]
+[node name="Interactable" type="StaticBody3D" parent="." unique_id=709942739 node_paths=PackedStringArray("visual")]
 script = ExtResource("2_rk7hg")
+visual = NodePath("Sprite3D")
 
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=1380386267]
+[node name="Sprite3D" type="Sprite3D" parent="Interactable" unique_id=1380386267]
 transform = Transform3D(0.99980825, 0, 0.01958126, 0, 1, 0, -0.01958126, 0, 0.99980825, -0.191836, 0, -1.0818305)
 texture = ExtResource("2_qtlar")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2064527308]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=2064527308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21193337, 0.0031886995, -1.0854572)
 shape = SubResource("BoxShape3D_pakj4")
